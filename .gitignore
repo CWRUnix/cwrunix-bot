@@ -1,0 +1,7 @@
+*result
+*out
+.direnv
+*.tmp
+.venv
+__pycache__/
+.ruff_cache/

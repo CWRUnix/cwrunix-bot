@@ -1,0 +1,38 @@
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+]
+
+[project]
+name = "CWRUnix-bot"
+version = "0.1.0"
+description = "Discord bot for the CWRUnix server"
+requires-python = ">=3.14"
+dependencies = [
+  "discord.py>=2.6",
+  "httpx>=0.28"
+]
+
+[project.scripts]
+cwrunix_bot = "cwrunix_bot:main"
+
+[tool.basedpyright]
+extraPaths = ["src"]
+useLibraryCodeForTypes = true
+reportMissingTypeStubs = "none"
+ignore = [
+  "typings",
+  "nix/store",
+  ".direnv"
+]
+exclude = [
+  "**/node_modules",
+  "**/__pycache__",
+  "**/.venv",
+  "**/.*"
+]
+venvPath = "."
+venv = ".venv"
